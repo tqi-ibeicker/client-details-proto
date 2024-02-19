@@ -1,0 +1,135 @@
+import { Contract, ContractTimeline } from '@/types/contract'
+
+export const contractList: Contract[] = [
+	{
+		contractNumber: 'A-300200',
+		status: 'Inadimplente',
+		indebted: true,
+		product: 'Empréstimo Whitelabel',
+		aging: 30,
+		debtBalance: 2000,
+	},
+	{
+		contractNumber: '2002399945',
+		status: 'Adimplente',
+		indebted: false,
+		product: 'Cartão de Crédito',
+		aging: 0,
+		debtBalance: 0,
+	}
+]
+
+export const timeline: ContractTimeline = {
+	events: [
+		{
+			id: 1,
+			name: 'Inadimplência',
+			value: 1000,
+			dateTime: new Date('2023-11-11T13:03:22.200Z'),
+			dueDate: new Date('2023-11-01'),
+			paidBy: 5,
+			type: 'indebtedAdd',
+		},
+		{
+			id: 1001,
+			name: 'Bloqueio de Saldo',
+			dateTime: new Date('2023-11-12T09:01:00.200Z'),
+			type: 'ruler',
+			aging: 5,
+		},
+		{
+			id: 1002,
+			name: 'Rapa Conta',
+			dateTime: new Date('2023-11-12T09:02:00.200Z'),
+			type: 'ruler',
+			aging: 5,
+		},
+		{
+			id: 2,
+			name: 'Inadimplência',
+			value: 1230,
+			dateTime: new Date('2023-12-03T12:15:45.200Z'),
+			dueDate: new Date('2023-12-01'),
+			paidBy: 6,
+			type: 'indebtedAdd',
+		},
+		{
+			id: 3,
+			name: 'Inadimplência',
+			value: 1563,
+			dateTime: new Date('2024-01-09T13:19:10.200Z'),
+			dueDate: new Date('2024-01-01'),
+			paidBy: 7,
+			type: 'indebtedAdd',
+		},
+		{
+			id: 4,
+			name: 'Inadimplência',
+			value: 1821,
+			dateTime: new Date('2024-02-10T13:03:18.200Z'),
+			dueDate: new Date('2024-02-01'),
+			type: 'indebtedAdd',
+			paidBy: 8,
+		},
+		{
+			id: 1005,
+			name: 'Acordo',
+			dateTime: new Date('2024-02-12T13:03:18.200Z'),
+			type: 'agreement',
+			value: 1830,
+		},
+		{
+			id: 5,
+			name: 'Adimplência',
+			value: 1000,
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			dueDate: new Date('2023-11-01'),
+			type: 'indebtedRemove',
+		},
+		{
+			id: 6,
+			name: 'Adimplência',
+			value: 1230,
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			dueDate: new Date('2023-12-01'),
+			type: 'indebtedRemove',
+		},
+		{
+			id: 7,
+			name: 'Adimplência',
+			value: 1563,
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			dueDate: new Date('2024-01-01'),
+			type: 'indebtedRemove',
+		},
+		{
+			id: 8,
+			name: 'Adimplência',
+			value: 1821,
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			dueDate: new Date('2024-02-01'),
+			type: 'indebtedRemove',
+		},
+		{
+			id: 1003,
+			name: 'Desbloqueio de Saldo',
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			type: 'ruler',
+			aging: 40,
+		},
+		{
+			id: 1004,
+			name: 'Remoção Rapa Conta',
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			type: 'ruler',
+			aging: 40,
+		},
+		{
+			id: 1004,
+			name: 'Acordo Liquidado',
+			dateTime: new Date('2024-02-14T13:03:18.200Z'),
+			type: 'agreement',
+			value: 1830,
+		},
+	]
+}
